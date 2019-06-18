@@ -54,8 +54,10 @@ class IndexPage extends Component {
   }
   render() {
     return (
+      <div style={{ height: "100vh", color: "white", display:"flex", justifyContent: "center", alignItems: "center", background: "linear-gradient(to right, #8a2387, #e94057, #f27121)"}}>
+        
       <div className="body" style={{display: "flex", flexDirection: "column"}}>
-        <label>
+        <label style={{paddingTop: "1"}}>
           Match Time
           <input type="text" onChange={this.changeHandler} name='matchTime' />
           min
@@ -68,9 +70,10 @@ class IndexPage extends Component {
             Parts of a single card
             <input type="text" onChange={this.changeHandler} name='parts'/>
         </label>
-        <button onClick={this.mainCalc}>get the playtime</button>
+        <button style={{border: "1px solid white", width: "25rem"}} onClick={this.mainCalc}>get the playtime</button>
         <p>number of games per part: {this.state.numOfGames} number of games per card: {this.state.numOfGames * this.state.parts}</p>
         <p>{this.state.gameTime}min / {String(this.state.gameTime/60).substr(0, 6)} hrs</p>
+      </div>
       </div>
     );
   }
